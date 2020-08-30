@@ -22,6 +22,15 @@ My Profile: https://www.linkedin.com/in/pcinvent/
 - Created Makefile script to run this docker-compose heathly (Please check the following explanation)
 
 #### makefile
+
+If you are using `Linux`, replace the content of `Makefile` with `Makefile.linux.dist`.
+
+If you are using `Mac`, you do not need to do anything.
+
+If you are using `Windows`, there is no gurantee makefile will work. Best you can install Linux or run the following command manually.
+
+---
+
 You can run this `make` which is just a wrapper of some commands that will resolve your docker-compose up issues.
 If you encounter any docker issue, run `make rebuild`, then `make`.
 If you do not want to install make binary, you can just run whatever the following commands listed below:
