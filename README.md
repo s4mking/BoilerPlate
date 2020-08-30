@@ -1,6 +1,6 @@
 **Long Story Short:**
 
-This is a repository `api-platform-mysql8` done by me: Andy Ng (andy@pcinvent.com), CEO of AITRADE, INC. (www.aitrade.ai)
+This is a repository `api-platform-mysql` done by me: Andy Ng (andy@pcinvent.com), CEO of AITRADE, INC. (www.aitrade.ai)
 My Profile: https://www.linkedin.com/in/pcinvent/
 
 [API Platform](https://github.com/api-platform/api-platform "API Platform") that comes with the latest best enterprise PHP Framework [Symfony](https://github.com/symfony/symfony "Symfony"), [React-Admin](https://github.com/marmelab/react-admin "React-Admin") Dashboard, [GraphQL](https://graphql.org/ "GraphQL"), etc. which are all great,
