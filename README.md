@@ -1,7 +1,7 @@
 # Long Story Short:
 
 This is a repository `api-platform-mysql` done by me: Andy Ng (andy@pcinvent.com), CEO of AITRADE, INC. (www.aitrade.ai)
-My Profile: https://www.linkedin.com/in/pcinvent/ for whoever want to use MySQL with API Platform.
+My Profile: http://linkedin.com/in/pcinvent for whoever want to use MySQL with API Platform.
 
 
 ## WHAT WILL YOU HAVE?
