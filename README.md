@@ -1,25 +1,55 @@
-**Long Story Short:**
+# Long Story Short:
 
-This is a repository `api-platform-mysql8` done by me: Andy Ng (andy@pcinvent.com), CEO of AITRADE, INC. (www.aitrade.ai)
-My Profile: https://www.linkedin.com/in/pcinvent/
+This is a repository `api-platform-mysql` done by me: Andy Ng (andy@pcinvent.com), CEO of AITRADE, INC. (www.aitrade.ai)
+My Profile: https://www.linkedin.com/in/pcinvent/ for whoever want to use MySQL with API Platform.
 
-[API Platform](https://github.com/api-platform/api-platform "API Platform") that comes with the latest best enterprise PHP Framework [Symfony](https://github.com/symfony/symfony "Symfony"), [React-Admin](https://github.com/marmelab/react-admin "React-Admin") Dashboard, [GraphQL](https://graphql.org/ "GraphQL"), etc. which are all great,
 
+## WHAT WILL YOU HAVE?
+
+[API Platform](https://github.com/api-platform/api-platform "API Platform") has:
+- All services will be running in [Docker](https://www.docker.com "Docker") with docker-compose.
+- latest best enterprise PHP Framework [Symfony](https://github.com/symfony/symfony "Symfony")
+- [React-Admin](https://github.com/marmelab/react-admin "React-Admin") Dashboard
+- [GraphQL](https://graphql.org/ "GraphQL")
+- etc.
 
 ------------
 
-> #### However, API Platform is by default built with PostgreSQL. To make API Platoform project work for MySQL 8.  I am here to share this and hope all can fork and contribute this open source project to save you time of scratching head.
+> #### However, API Platform is by default built with PostgreSQL. To make API Platform project work for MySQL 8.  I am here to share this API-Platform-MySQL Project and hope all can fork and contribute this open source project to save you time of scratching head.
 
 ------------
 
+## WHAT WILL YOU SEE?
+
+#### Client Page
+
+![screenshot](https://github.com/pcinvent/api-platform-mysql/blob/master/github/img/client-page.png)
+
+#### API Page
+
+![screenshot](https://github.com/pcinvent/api-platform-mysql/blob/master/github/img/api-page-1.png)
+
+![screenshot](https://github.com/pcinvent/api-platform-mysql/blob/master/github/img/api-page-2.png)
+
+#### Admin Page
+
+![screenshot](https://github.com/pcinvent/api-platform-mysql/blob/master/github/img/admin-page-1.png)
+
+![screenshot](https://github.com/pcinvent/api-platform-mysql/blob/master/github/img/admin-page-2.png)
+
+![screenshot](https://github.com/pcinvent/api-platform-mysql/blob/master/github/img/admin-page-3.png)
 
 #### Features
 
 - Made doctrine to work with MySQL 8
-- Changed Docker-Compose images to 8
+- Changed Docker-Compose images to MySQL:8
 - Fixed the failure of php docker-entrypoint.sh to allow auto migration
 - Changed .gitignore for common IDE/Editor and Mysql Docker
 - Created Makefile script to run this docker-compose heathly (Please check the following explanation)
+
+------------
+
+## HOW TO RUN?
 
 #### makefile
 
@@ -36,15 +66,22 @@ If you encounter any docker issue, run `make rebuild`, then `make`.
 If you do not want to install make binary, you can just run whatever the following commands listed below:
 
 `make rebuild`
+
+![screenshot](https://github.com/pcinvent/api-platform-mysql/blob/master/github/img/make-rebuild.png)
+
+![screenshot](https://github.com/pcinvent/api-platform-mysql/blob/master/github/img/make-rebuild-2.png)
+
 pruning all of your docker images and instances if you encounter mysql image with different tag issues. For example, you were using Mysql 5, then now using the Mysql 8 docker, you should see a lot problem in term of upgrading, so here you go:
 ```shell
-	docker stop $(docker ps -a -q)
-	docker rm $(docker ps -a -q)
+	docker ps -a -q | xargs -n 1 -P 8 -I {} docker stop {}
 	docker builder prune --all --force
 	docker-compose build
 ```
 
 `make`
+
+![screenshot](https://github.com/pcinvent/api-platform-mysql/blob/master/github/img/make-dev.png)
+
 Preventing timeout when you are first running this dokcer-compose, and fixed the problem of `php-fpm` have to restart due to the API-Platform with MySQL issue.
 ```shell
 	# prevent timeout

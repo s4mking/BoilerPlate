@@ -26,7 +26,7 @@ const Welcome = () => (
             </div>
             <div className="main__content">
                 <h1>
-                    Welcome to <strong>API Platform</strong>!
+                    Welcome to <strong>API Platform with MySQL</strong>!
                 </h1>
                 <div className="main__before-starting">
                     <p>
