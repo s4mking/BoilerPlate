@@ -53,9 +53,9 @@ My Profile: http://linkedin.com/in/pcinvent for whoever want to use MySQL with A
 
 #### makefile
 
-If you are using `Linux`, replace the content of `Makefile` with `Makefile.linux.dist`.
+If you are using `Linux`, you need to run `sudo make`.
 
-If you are using `Mac`, you do not need to do anything.
+If you are using `Mac`, you run just `make`
 
 If you are using `Windows`, there is no gurantee makefile will work. Best you can install Linux or run the following command manually.
 
