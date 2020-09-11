@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.20.0",
     "bootstrap": "^4.4.0",
     "connected-react-router": "^6.7.0",
     "lodash.get": "^4.4.2",
@@ -18,9 +19,11 @@
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.0",
+    "react-validation": "^3.0.7",
     "redux": "^4.0.1",
     "redux-form": "^8.3.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "validator": "^13.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
