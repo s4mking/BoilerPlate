@@ -85,13 +85,13 @@ unserve: ## Stop the webserver
 # Snippet L70+12 => templates/blog/posts/_64.html.twig
 
 ## —— Docker 🐳 ————————————————————————————————————————————————————————————————
-up: docker-compose.yaml ## Start the docker hub (MySQL,redis,adminer,elasticsearch,head,Kibana)
-	$(DOCKER_COMP) -f docker-compose.yaml up -d
+up: docker-compose.yml ## Start the docker hub (MySQL,redis,adminer,elasticsearch,head,Kibana)
+	$(DOCKER_COMP) -f docker-compose.yml up -d
 
-docker-build: docker-compose.yaml ## UP+rebuild the application image
-	$(DOCKER_COMP) -f docker-compose.yaml up -d --build
+docker-build: docker-compose.yml ## UP+rebuild the application image
+	$(DOCKER_COMP) -f docker-compose.yml up -d --build
 
-down: docker-compose.yaml ## Stop the docker hub
+down: docker-compose.yml ## Stop the docker hub
 	$(DOCKER_COMP) down --remove-orphans
 
 dpsn: ## List Docker containers for the project
@@ -122,13 +122,15 @@ cc-redis: ## Flush all Redis cache
 commands: ## Display all commands in the project namespace
 	$(SYMFONY) list $(PROJECT)
 
-load-fixtures: ## Build the DB, control the schema validity, load fixtures and check the migration status
+load-fixtures: load-empty-db ## load-empty-db, load fixtures and check the migration status
+	$(SYMFONY) doctrine:fixtures:load -n
+
+load-empty-db: ## Build the DB, control the schema validity
 	$(SYMFONY) doctrine:cache:clear-metadata
 	$(SYMFONY) doctrine:database:create --if-not-exists
 	$(SYMFONY) doctrine:schema:drop --force
 	$(SYMFONY) doctrine:schema:create
 	$(SYMFONY) doctrine:schema:validate
-	$(SYMFONY) doctrine:fixtures:load -n
 
 init-snippet: ## Initialize a new snippet
 	$(SYMFONY) $(PROJECT):init-snippet
