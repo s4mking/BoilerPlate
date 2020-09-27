@@ -20,7 +20,7 @@ RUN apk add --no-cache \
 	gettext \
 	git \
 	;
-
+COPY .docker/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 ARG APCU_VERSION=5.1.18
 RUN set -eux; \
 	apk add --no-cache --virtual .\build-deps \
@@ -68,6 +68,12 @@ WORKDIR /srv/api
 
 # build for production
 ARG APP_ENV=prod
+
+
+RUN docker-php-ext-install
+RUN pecl install xdebug 
+RUN docker-php-ext-enable xdebug
+RUN chown -R www-data:www-data /srv/api
 
 # prevent the reinstallation of vendors at every changes in the source code
 COPY composer.json composer.lock symfony.lock ./

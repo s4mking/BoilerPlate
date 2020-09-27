@@ -40,9 +40,7 @@ ReactDOM.render(
         <Route path="/" component={Welcome} strict={true} exact={true}/>
         {/* Add your routes here */}
         {bookRoutes}
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
+         
         <Route render={() => <h1>Not Found</h1>} />
       
       </Switch>
